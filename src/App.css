@@ -1,0 +1,1063 @@
+:root {
+  --skin-rose: #b0587a;
+  --skin-rose-mid: #c4789a;
+  --skin-rose-soft: #d898ba;
+  --skin-rose-muted: rgba(176, 88, 122, 0.14);
+  --skin-outline: rgba(176, 88, 122, 0.22);
+  --skin-text: #4a2e3a;
+  --skin-card-gap: 48px;
+}
+
+/* ─── Shell ─── */
+
+.auth-shell,
+.app-shell {
+  min-height: 100vh;
+}
+
+.auth-shell {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* ─── Surfaces ─── */
+
+.pin-card,
+.notice-card,
+.empty-state,
+.record-body-surface {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 16px 36px rgba(80, 20, 50, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+/* ─── PIN Card (Login) ─── */
+
+.pin-card {
+  width: min(100%, 420px);
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-badge,
+.topbar-title,
+.checkbox-row,
+.app-icon,
+.empty-illustration {
+  display: flex;
+  align-items: center;
+}
+
+.app-badge,
+.eyebrow {
+  color: var(--skin-rose);
+}
+
+.app-badge {
+  gap: 10px;
+  font-weight: 700;
+}
+
+.pin-card .app-badge span {
+  font-size: 121%;
+  font-weight: 800;
+}
+
+.app-badge svg,
+.app-icon svg,
+.empty-illustration svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ─── Fields ─── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.field span {
+  font-size: 87%;
+  color: #64748b;
+}
+
+.field input,
+.field select,
+.field-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8d0db;
+  background: #fff;
+  border-radius: 14px;
+  padding: 11px 14px;
+  font: inherit;
+  color: var(--skin-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field-textarea:focus,
+.pin-entry-input:focus,
+.record-edit-input:focus {
+  outline: none;
+  border-color: var(--skin-rose-soft);
+}
+
+.field-plain {
+  margin: 0;
+  font-weight: 400;
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+/* ─── PIN Entry ─── */
+
+.pin-entry-field {
+  margin-top: 4.5rem;
+}
+
+.pin-entry-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8d0db;
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--skin-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.pin-entry-input:focus {
+  outline: none;
+  border-color: var(--skin-rose-soft);
+}
+
+.checkbox-row {
+  gap: 10px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.pin-card .checkbox-row {
+  align-self: stretch;
+  justify-content: center;
+  width: 100%;
+}
+
+.pin-card .primary-button {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.checkbox-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--skin-rose);
+}
+
+.pin-subtitle,
+.notice-card p,
+.empty-state p {
+  color: #64748b;
+  margin: 0;
+}
+
+.error-text {
+  color: #dc2626;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ─── Buttons ─── */
+
+.primary-button,
+.secondary-button,
+.text-button,
+.record-icon-button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.text-button:hover,
+.record-icon-button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.primary-button,
+.secondary-button {
+  justify-content: center;
+  border-radius: 16px;
+  padding: 13px 18px;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--skin-rose-mid), var(--skin-rose));
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(176, 88, 122, 0.28);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.secondary-button {
+  background: #fff;
+  color: #334155;
+  border: 1px solid #e8d0db;
+}
+
+.text-button {
+  align-self: flex-start;
+  padding: 0;
+  background: transparent;
+  color: var(--skin-rose);
+  font-weight: 700;
+}
+
+.pin-change-button {
+  align-self: flex-end;
+  margin-top: 0;
+  color: #94748a;
+  font-weight: 600;
+  font-size: 90%;
+}
+
+.pin-change-button:hover {
+  color: #64485c;
+}
+
+.pin-change-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 20px;
+  background: #fdf0f6;
+  border: 1px solid #f0d0e0;
+}
+
+.pin-change-panel button {
+  width: 100%;
+}
+
+/* ─── Focus outlines ─── */
+
+.primary-button:focus,
+.secondary-button:focus,
+.text-button:focus,
+.record-icon-button:focus-visible {
+  outline: 3px solid var(--skin-rose-muted);
+  outline-offset: 2px;
+}
+
+/* ─── PIN Card headings ─── */
+
+.pin-card h1,
+.notice-card h2,
+.empty-state h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.pin-card h1 {
+  font-weight: 800;
+}
+
+/* ─── App Shell ─── */
+
+.app-shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 8px 6px 56px 20px;
+  box-sizing: border-box;
+}
+
+/* ─── Topbar ─── */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.topbar-title {
+  gap: 14px;
+}
+
+.topbar-title h1 {
+  margin: 0;
+  font-size: calc(1.35rem * 1.1);
+  line-height: 1.2;
+  color: var(--skin-rose);
+  font-weight: 800;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: flex-start;
+  margin-top: -2px;
+  margin-right: -4px;
+}
+
+.lock-button {
+  box-sizing: border-box;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  max-width: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lock-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.app-icon,
+.empty-illustration {
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(212, 132, 158, 0.2), rgba(176, 88, 122, 0.12));
+  color: var(--skin-rose-mid);
+}
+
+/* ─── Toast / Notice ─── */
+
+.notice-card,
+.empty-state {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.notice-card {
+  margin-bottom: 16px;
+}
+
+.error-card {
+  border-color: rgba(239, 68, 68, 0.18);
+}
+
+.toast-message {
+  position: sticky;
+  top: 16px;
+  z-index: 5;
+  margin-bottom: 16px;
+  background: #6e2042;
+  color: #fff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+/* ─── Content Area ─── */
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skin-card-gap);
+}
+
+/* ─── Korean Date Input ─── */
+
+.korean-date-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8d0db;
+  background: #fff;
+  border-radius: 14px;
+  padding: 11px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+  user-select: none;
+}
+
+.korean-date-wrap:hover {
+  border-color: var(--skin-rose-soft);
+}
+
+.korean-date-display {
+  font: inherit;
+  font-size: 100%;
+  color: var(--skin-text);
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.korean-date-placeholder {
+  color: #aaa;
+}
+
+.korean-date-icon {
+  color: var(--skin-rose-soft);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.korean-date-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.korean-date-hidden {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.edit-korean-date {
+  border-radius: 12px;
+  padding: 9px 12px;
+  font-size: 93%;
+}
+
+/* ─── FAB ─── */
+
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 20;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--skin-rose-mid), var(--skin-rose));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(176, 88, 122, 0.42);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(176, 88, 122, 0.52);
+}
+
+.fab:active {
+  transform: scale(0.96);
+}
+
+.fab svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ─── Modal ─── */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(60, 20, 40, 0.32);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media (min-width: 520px) {
+  .modal-overlay {
+    align-items: center;
+  }
+}
+
+.modal-sheet {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 28px 28px 0 0;
+  padding: 0 20px 32px;
+  box-shadow: 0 -8px 40px rgba(80, 20, 50, 0.14);
+  animation: slideUp 0.22s ease;
+}
+
+@media (min-width: 520px) {
+  .modal-sheet {
+    border-radius: 28px;
+    padding: 0 24px 28px;
+    animation: fadeIn 0.18s ease;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 14px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 97%;
+  font-weight: 800;
+  color: var(--skin-rose);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.modal-close-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f5e8ef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--skin-rose);
+  flex-shrink: 0;
+  transition: background 0.14s ease;
+}
+
+.modal-close-button:hover {
+  background: #ecd4de;
+}
+
+.modal-close-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ─── Record Form (used inside modal) ─── */
+
+.record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-row--single {
+  grid-template-columns: 1fr;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.save-button {
+  font-size: 0.92rem;
+  padding: 11px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--skin-rose-mid), var(--skin-rose));
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(176, 88, 122, 0.22);
+}
+
+/* ─── Records List ─── */
+
+.records-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skin-card-gap);
+}
+
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skin-card-gap);
+}
+
+.empty-state {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Record Card ─── */
+
+.record-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.record-body-surface {
+  border-radius: 22px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.record-date-header {
+  background: linear-gradient(135deg, rgba(212, 132, 158, 0.18), rgba(176, 88, 122, 0.10));
+  padding: 10px 14px 10px 18px;
+  border-bottom: 1px solid rgba(176, 88, 122, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.record-date-label {
+  font-size: 87%;
+  font-weight: 700;
+  color: var(--skin-rose);
+  letter-spacing: 0.02em;
+  margin: 0;
+  min-width: 0;
+}
+
+.record-header-title {
+  margin: 0;
+  min-width: 0;
+  font-weight: 800;
+  font-size: 92%;
+  color: #6e2042;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-header-sub {
+  font-size: 92%;
+  font-weight: 700;
+  color: rgba(110, 32, 66, 0.7);
+}
+
+.record-date-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.record-date-inline {
+  font-size: 82%;
+  font-weight: 700;
+  color: rgba(110, 32, 66, 0.72);
+  white-space: nowrap;
+  margin-right: 6px;
+}
+
+.record-icon-button--header {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  border-color: rgba(240, 208, 224, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.record-body {
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.55fr);
+  gap: 14px;
+  font-size: 90%;
+}
+
+.record-col {
+  min-width: 0;
+}
+
+.record-col--meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.record-col--content {
+  border-left: 1px dashed rgba(176, 88, 122, 0.32);
+  padding-left: 14px;
+}
+
+.record-col--content-empty {
+  display: none;
+}
+
+/* ─── Record Field Rows ─── */
+
+.record-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.record-field {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  min-width: 0;
+}
+
+.record-field-label {
+  font-size: 77%;
+  font-weight: 700;
+  color: var(--skin-rose-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: rgba(176, 88, 122, 0.09);
+  border-radius: 6px;
+  padding: 2px 6px;
+  line-height: 1.5;
+}
+
+.record-field-value {
+  font-size: 95%;
+  color: var(--skin-text);
+  font-weight: 500;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.record-field-value--paren {
+  color: #7b5566;
+  font-weight: 600;
+  font-size: 92%;
+}
+
+.record-field-value--procedure {
+  font-weight: 700;
+  font-size: 100%;
+  color: #2d1a27;
+}
+
+.record-divider {
+  border: none;
+  border-top: 1px solid rgba(176, 88, 122, 0.10);
+  margin: 2px 0;
+}
+
+/* ─── Content (내용) ─── */
+
+.record-content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.record-content {
+  margin: 0;
+  font-size: 93%;
+  color: #5a3a4a;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.record-content--clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expand-button {
+  align-self: flex-start;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--skin-rose-mid);
+  font: inherit;
+  font-size: 84%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.14s ease;
+}
+
+.expand-button:hover {
+  color: var(--skin-rose);
+}
+
+/* ─── Record Meta Row (edit/delete buttons) ─── */
+
+.record-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 8px 4px 0;
+}
+
+.record-icon-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #f0d0e0;
+  background: #fff;
+  color: var(--skin-rose-mid);
+  box-shadow: 0 1px 2px rgba(80, 20, 50, 0.05);
+}
+
+.record-icon-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.record-icon-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── Inline Edit Form (inside card) ─── */
+
+.record-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+}
+
+.record-edit-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8d0db;
+  background: #fff;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 93%;
+  color: var(--skin-text);
+  font-weight: 400;
+  transition: border-color 0.15s ease;
+}
+
+.record-edit-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8d0db;
+  background: #fff;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 93%;
+  color: var(--skin-text);
+  font-weight: 400;
+  min-height: 72px;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.6;
+  transition: border-color 0.15s ease;
+}
+
+.record-edit-textarea:focus {
+  outline: none;
+  border-color: var(--skin-rose-soft);
+}
+
+.edit-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.edit-form-label {
+  font-size: 82%;
+  font-weight: 700;
+  color: #94748a;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.edit-save-button {
+  font-size: 0.88rem;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--skin-rose-mid), var(--skin-rose));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: transform 0.15s ease;
+}
+
+.edit-save-button:hover {
+  transform: translateY(-1px);
+}
+
+.edit-save-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.edit-cancel-button {
+  font-size: 0.88rem;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: #fff;
+  color: #334155;
+  border: 1px solid #e8d0db;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: transform 0.15s ease;
+}
+
+.edit-cancel-button:hover {
+  transform: translateY(-1px);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 640px) {
+  .pin-card,
+  .notice-card,
+  .empty-state,
+  .composer-card,
+  .record-body-surface {
+    border-radius: 18px;
+  }
+
+  .app-shell {
+    padding: 18px 14px 48px;
+  }
+
+  .topbar {
+    align-items: stretch;
+  }
+
+  .lock-button {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    border-radius: 9px;
+    flex: 0 0 auto;
+    align-self: flex-start;
+  }
+
+  .lock-button svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .save-button,
+  .primary-button:not(.lock-button),
+  .secondary-button:not(.lock-button) {
+    width: 100%;
+  }
+}
+
+/* ─── Utility ─── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

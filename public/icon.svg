@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="skinG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4849e" />
+      <stop offset="100%" stop-color="#b0587a" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="64" fill="#fef0f6" />
+  <rect x="44" y="40" width="168" height="176" rx="32" fill="url(#skinG)" opacity="0.14" />
+  <!-- Droplet shape (serum drop) -->
+  <path
+    d="M128 44 C128 44 72 108 72 152 A56 56 0 0 0 184 152 C184 108 128 44 128 44Z"
+    fill="url(#skinG)"
+    opacity="0.22"
+  />
+  <path
+    d="M128 44 C128 44 72 108 72 152 A56 56 0 0 0 184 152 C184 108 128 44 128 44Z"
+    fill="none"
+    stroke="url(#skinG)"
+    stroke-width="14"
+    stroke-linejoin="round"
+  />
+  <!-- Sparkle highlights -->
+  <circle cx="108" cy="148" r="7" fill="url(#skinG)" opacity="0.5" />
+  <path
+    d="M155 90 L158 98 L166 101 L158 104 L155 112 L152 104 L144 101 L152 98 Z"
+    fill="url(#skinG)"
+    opacity="0.6"
+  />
+</svg>

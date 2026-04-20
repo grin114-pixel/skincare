@@ -1,0 +1,17 @@
+{
+  "name": "Skin Care",
+  "short_name": "Skin Care",
+  "description": "피부 시술 기록 관리 앱",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef0f6",
+  "theme_color": "#b0587a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
