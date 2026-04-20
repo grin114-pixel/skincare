@@ -5,26 +5,26 @@
       <stop offset="100%" stop-color="#b0587a" />
     </linearGradient>
   </defs>
-  <rect width="256" height="256" rx="64" fill="#fef0f6" />
-  <rect x="44" y="40" width="168" height="176" rx="32" fill="url(#skinG)" opacity="0.14" />
-  <!-- Droplet shape (serum drop) -->
+  <rect width="256" height="256" rx="64" fill="url(#skinG)" />
+  <!-- Droplet icon (match header) -->
   <path
-    d="M128 44 C128 44 72 108 72 152 A56 56 0 0 0 184 152 C184 108 128 44 128 44Z"
-    fill="url(#skinG)"
-    opacity="0.22"
+    d="M128 48 C128 48 72 112 72 156 A56 56 0 0 0 184 156 C184 112 128 48 128 48Z"
+    fill="#ffffff"
+    opacity="0.18"
   />
   <path
-    d="M128 44 C128 44 72 108 72 152 A56 56 0 0 0 184 152 C184 108 128 44 128 44Z"
+    d="M128 48 C128 48 72 112 72 156 A56 56 0 0 0 184 156 C184 112 128 48 128 48Z"
     fill="none"
-    stroke="url(#skinG)"
+    stroke="#ffffff"
     stroke-width="14"
     stroke-linejoin="round"
   />
-  <!-- Sparkle highlights -->
-  <circle cx="108" cy="148" r="7" fill="url(#skinG)" opacity="0.5" />
   <path
-    d="M155 90 L158 98 L166 101 L158 104 L155 112 L152 104 L144 101 L152 98 Z"
-    fill="url(#skinG)"
-    opacity="0.6"
+    d="M102 150 A34 34 0 0 1 128 122"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="10"
+    stroke-linecap="round"
+    opacity="0.35"
   />
 </svg>
