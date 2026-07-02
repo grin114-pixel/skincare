@@ -28,7 +28,6 @@ const AUTH_STORAGE_KEY = 'skincare.remembered-auth'
 const PIN_HASH_STORAGE_KEY = 'skincare.pin-hash'
 const DEFAULT_PIN = '1234'
 const SETTINGS_ROW_ID = 'global'
-const CONTENT_TRUNCATE_THRESHOLD = 100
 
 function getErrorMessage(error: unknown) {
   if (error instanceof Error) {
@@ -53,10 +52,6 @@ function formatRecordDate(dateStr: string): string {
   const mm = String(month).padStart(2, '0')
   const dd = String(day).padStart(2, '0')
   return `${yyyy}. ${mm}. ${dd} (${weekday})`
-}
-
-function shouldTruncate(content: string): boolean {
-  return content.length > CONTENT_TRUNCATE_THRESHOLD || (content.match(/\n/g) ?? []).length >= 3
 }
 
 function autosizeTextarea(el: HTMLTextAreaElement | null) {
@@ -147,9 +142,6 @@ function App() {
     content: '',
   })
   const [isSavingEdit, setIsSavingEdit] = useState(false)
-
-  /* ── Expand state ── */
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set())
 
   /* ── Modal open state ── */
   const [isFormOpen, setIsFormOpen] = useState(false)
@@ -482,19 +474,6 @@ function App() {
     }
   }
 
-  /* ── Expand / collapse content ── */
-  function toggleExpand(id: string) {
-    setExpandedIds((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) {
-        next.delete(id)
-      } else {
-        next.add(id)
-      }
-      return next
-    })
-  }
-
   /* ─────────────────────────────────── */
   /* ── Render ── */
   /* ─────────────────────────────────── */
@@ -752,8 +731,6 @@ function App() {
             <div className="record-list">
               {records.map((record) => {
                 const isEditing = editingId === record.id
-                const isExpanded = expandedIds.has(record.id)
-                const hasTruncation = shouldTruncate(record.content)
 
                 return (
                   <div key={record.id} className="record-outer">
@@ -925,20 +902,7 @@ function App() {
                           {record.content ? (
                             <div className="record-col record-col--content">
                               <div className="record-content-wrap">
-                                <p
-                                  className={`record-content${!isExpanded && hasTruncation ? ' record-content--clamped' : ''}`}
-                                >
-                                  {record.content}
-                                </p>
-                                {hasTruncation ? (
-                                  <button
-                                    type="button"
-                                    className="expand-button"
-                                    onClick={() => toggleExpand(record.id)}
-                                  >
-                                    {isExpanded ? '접기' : '더보기'}
-                                  </button>
-                                ) : null}
+                                <p className="record-content">{record.content}</p>
                               </div>
                             </div>
                           ) : (

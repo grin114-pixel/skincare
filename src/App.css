@@ -822,30 +822,6 @@
   overflow-wrap: anywhere;
 }
 
-.record-content--clamped {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.expand-button {
-  align-self: flex-start;
-  padding: 0;
-  background: transparent;
-  border: none;
-  color: var(--skin-rose-mid);
-  font: inherit;
-  font-size: 84%;
-  font-weight: 700;
-  cursor: pointer;
-  transition: color 0.14s ease;
-}
-
-.expand-button:hover {
-  color: var(--skin-rose);
-}
-
 /* ─── Record Meta Row (edit/delete buttons) ─── */
 
 .record-meta-row {
