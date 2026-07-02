@@ -737,16 +737,16 @@
 .record-col--meta {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  text-align: center;
 }
 
 .record-col--content {
   border-left: 1px dashed rgba(176, 88, 122, 0.32);
   padding-left: 14px;
-}
-
-.record-col--content-empty {
-  display: none;
+  min-height: 100%;
 }
 
 /* ─── Record Field Rows ─── */
@@ -754,15 +754,19 @@
 .record-row {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .record-field {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 5px;
   min-width: 0;
+  width: 100%;
 }
 
 .record-field-label {

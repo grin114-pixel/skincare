@@ -899,15 +899,13 @@ function App() {
                           </div>
 
                           {/* Right column: 내용 */}
-                          {record.content ? (
-                            <div className="record-col record-col--content">
+                          <div className="record-col record-col--content">
+                            {record.content ? (
                               <div className="record-content-wrap">
                                 <p className="record-content">{record.content}</p>
                               </div>
-                            </div>
-                          ) : (
-                            <div className="record-col record-col--content record-col--content-empty" />
-                          )}
+                            ) : null}
+                          </div>
                         </div>
                       )}
                     </div>
